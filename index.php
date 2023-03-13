@@ -68,21 +68,21 @@ query;
                         </div>
                     </div>
                 <?php elseif ($sucsess_message) : ?>
-                    <div class="d-flex" id="some-message">
+                    <div class="d-flex" id="some-message" style="background-color:green ;">
                         <div class="content">
-                            <p><?php echo $sucsess_message ?></p>
+                            <p style="color: black;"><?php echo $sucsess_message ?></p>
                         </div>
                     </div>
                 <?php endif ?>
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
-                <div class="mb-3"><input class="form-control" type="number" name="id" placeholder="ID" require></div>
-                <div class="mb-3"><input class="form-control" type="text" name="first_name" placeholder="First Name" require>
+                <div class="mb-3"><input class="form-control" type="number" name="id" placeholder="ID" required></div>
+                <div class="mb-3"><input class="form-control" type="text" name="first_name" placeholder="First Name" required>
                 </div>
-                <div class="mb-3"><input class="form-control" type="text" name="last_name" placeholder="Last Name" require>
+                <div class="mb-3"><input class="form-control" type="text" name="last_name" placeholder="Last Name" required>
                 </div>
-                <div class="mb-3"><input class="form-control" type="number" name="age" placeholder="Age" require></div>
-                <div class="mb-3"><input class="form-control" type="text" name="major" placeholder="Major" require></div>
-                <div class="mb-3"><input class="form-control" type="text" name="level" placeholder="Level" require></div>
+                <div class="mb-3"><input class="form-control" type="number" name="age" placeholder="Age" required></div>
+                <div class="mb-3"><input class="form-control" type="text" name="major" placeholder="Major" required></div>
+                <div class="mb-3"><input class="form-control" type="text" name="level" placeholder="Level" required></div>
                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Sign Up</button></div>
             </form>
         </div>
