@@ -1,60 +1,24 @@
 <?php
 
-$query = <<<"query"
-CREATE DATABASE IF NOT EXISTS php_un;
-query;
-$conn = mysqli_connect('localhost', 'root');
+if (isset($_POST['submit'])) {
+    $image = $_FILES['image'];
 
-if (mysqli_connect_errno()) {
-    echo "Error when connected with database and error message" . mysqli_connect_error();
+    echo '<pre>';
+    print_r($image);
+    echo '</pre>';
 }
 
-mysqli_close($conn);
 
-$query = <<<"query"
-CREATE TABLE IF NOT EXISTS users(id INT PRIMARY KEY,first_name CHAR(30), last_name CHAR(30),age Integer, major CHAR(30),Level CHAR(30));
-query;
-
-$conn = mysqli_connect('localhost', 'root', null, 'php_un');
-if (!mysqli_query($conn, $query)) {
-    die('error in create table: ' . mysqli_error($conn));
-}
-
-$error_message = '';
-$sucsess_message = '';
-
-if ($_POST) {
-    $id = $_POST['id'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $age = $_POST['age'];
-    $major = $_POST['major'];
-    $level = $_POST['level'];
-
-    if ($age >= 25) {
-        $error_message = "Your age is $age this very big to this";
-    } elseif ($age <= 5) {
-        $error_message = "Your age is $age this very smoll to this";
-    }
-
-    $query = <<<"query"
-    INSERT INTO users (id,first_name,last_name,major,age ,Level) VALUES ($id, '$first_name', '$last_name', '$major',  $age, ' $level');
-query;
-
-    if (mysqli_query($conn, $query)) {
-        $sucsess_message = 'Addedd Sucsessfuly';
-    }
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Template 1</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
